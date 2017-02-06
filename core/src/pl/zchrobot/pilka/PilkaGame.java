@@ -5,14 +5,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.TimeUtils;
-
 import java.util.Random;
 
 
@@ -58,8 +53,7 @@ public class PilkaGame extends ApplicationAdapter {
 		//b1 = new Ball(new Vector2(posX + (r.nextInt(400)-200), posY + (r.nextInt(400)-200) ),radius, Color.BLUE, screenHeight, screenWidth);
         //b2 = new Ball(new Vector2(posX + (r.nextInt(400)-200), posY + (r.nextInt(400)-200) ),radius, Color.RED, screenHeight, screenWidth);
 
-
-
+        // filling table with new objects type: Ball
         for (int i = 0; i < balls.length ; i++)
         {
             Color c = new Color(r.nextFloat(), r.nextFloat(), r.nextFloat(), 1.0f);
@@ -83,9 +77,6 @@ public class PilkaGame extends ApplicationAdapter {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        // read time
-        //deltaTime = TimeUtils.timeSinceMillis(timePrevious);
-        //timePrevious = TimeUtils.millis();
         float delta = Gdx.graphics.getDeltaTime();
 
         // read accelerometer
@@ -96,23 +87,12 @@ public class PilkaGame extends ApplicationAdapter {
         //b1.update(delta);
         //b1.render(shapeRenderer);
 
-        //b2.update(delta);
-        //b2.render(shapeRenderer);
-
-        //b3.update(delta);
-        //b3.render(shapeRenderer);
-
-        //b4.update(delta);
-        //b4.render(shapeRenderer);
 
         for (Ball b:balls) {
             b.update(delta);
             b.render(shapeRenderer);
         }
 
-        //balls[0].update(delta);
-        //balls[0].render(shapeRenderer);
-        float fps = Gdx.graphics.getFramesPerSecond();
 
 
         // Napisy
@@ -121,6 +101,8 @@ public class PilkaGame extends ApplicationAdapter {
         String sAccelZ = "Z =  " + Float.toString(accelZ);
         //String sTime = "dt = " + Long.toString(deltaTime) + ", delta = " + Float.toString(delta);
         String sTime = "delta = " + Integer.toString((int) (delta * 1000.0)) + " ms";
+
+        float fps = Gdx.graphics.getFramesPerSecond();
         String sFps = "FPS: " + Float.toString(fps);
 
         batch.begin();

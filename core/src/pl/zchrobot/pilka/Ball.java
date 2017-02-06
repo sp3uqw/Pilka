@@ -33,24 +33,7 @@ public class Ball
     }
 
 
-    public Ball()
-    {
-        long seed = System.currentTimeMillis();
-        Random r = new Random(seed);
-
-        this.p= new Vector2((r.nextInt(400)-200),(r.nextInt(400)-200));
-
-        this.v = new Vector2();
-        this.radius = radius;
-        this.screenHeight = screenHeight;
-        this.screenWidth = screenWidth;
-        this.color = color;
-    }
-
-
-
     public void update(float delta){
-        //int screenHeight = PilkaGame.screenHeight;
 
         // read accelerometer
         float accelX = Gdx.input.getAccelerometerX();
