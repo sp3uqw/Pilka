@@ -3,6 +3,7 @@ package pl.zchrobot.pilka;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.Color;
@@ -11,11 +12,16 @@ import com.badlogic.gdx.math.Vector2;
 import java.util.Random;
 
 
+
+
 public class PilkaGame extends ApplicationAdapter {
 
 	private ShapeRenderer shapeRenderer;
 	SpriteBatch batch;
 	BitmapFont font;
+
+    Sprite sprite1 = new Sprite();
+
 
     public int screenWidth;
     public int screenHeight;
@@ -83,6 +89,8 @@ public class PilkaGame extends ApplicationAdapter {
         float accelX = Gdx.input.getAccelerometerX();
         float accelY = Gdx.input.getAccelerometerY();
         float accelZ = Gdx.input.getAccelerometerZ();
+
+       
 
         //b1.update(delta);
         //b1.render(shapeRenderer);
